@@ -1,147 +1,147 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
   <meta charset="UTF-8">
   <title>Profil & Organisasi | Kesiswaan SMAN 103</title>
   <link rel="stylesheet" href="style.css">
- <style>
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #f9fafc;
-  text-align: center;
-  padding: 20px;
-}
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f9fafc;
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+    }
 
-.box {
-  background: white;
-  border: 2px solid #ccc;
-  border-radius: 10px;
-  display: inline-block;
-  padding: 10px 20px;
-  margin: 10px auto;
-  position: relative;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  min-width: 180px;
-}
-.title { font-weight: 600; color: #333; }
-.name { font-size: 0.9em; color: #555; }
+    h2, h3 { color: #333; }
 
-.line {
-  width: 2px;
-  height: 30px;
-  background: #777;
-  margin: 0 auto;
-}
+    .box {
+      background: white;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      display: inline-block;
+      padding: 15px 25px;
+      margin: 10px;
+      position: relative;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      min-width: 200px;
+    }
 
-.flex-tight {
-  display: flex;
-  justify-content: center;
-  gap: 100px; /* rapat di tengah */
-  position: relative;
-}
-.flex-tight::before {
-  content: "";
-  position: absolute;
-  top: -25px;
-  left: 50%;
-  width: 2px;
-  height: 25px;
-  background: #777;
-  transform: translateX(-50%);
-}
-.flex-tight::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 200px;
-  height: 2px;
-  background: #777;
-  transform: translateX(-50%);
-}
+    .title { font-weight: 600; color: #333; }
+    .name { font-size: 0.9em; color: #555; margin-top: 5px; }
 
-.sekbid-wrapper {
-  position: relative;
-  margin-top: 60px;
-}
-.sekbid-wrapper::before {
-  content: "";
-  position: absolute;
-  top: -40px;
-  left: 50%;
-  width: 2px;
-  height: 40px;
-  background: #777;
-  transform: translateX(-50%);
-}
+    .line {
+      width: 2px;
+      height: 30px;
+      background: #777;
+      margin: 0 auto;
+    }
 
-.sekbid-flex {
-  display: flex;
-  justify-content: center;
-  gap: 220px;
-  position: relative;
-}
-.sekbid-flex::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 400px;
-  height: 2px;
-  background: #777;
-  transform: translateX(-50%);
-}
+    .flex-tight {
+      display: flex;
+      justify-content: center;
+      gap: 50px; /* Lebih rapat */
+      position: relative;
+      margin-top: 10px;
+    }
 
-.sekbid-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  gap: 25px;
-}
-.sekbid-column::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 2px;
-  height: 100%;
-  background: #777;
-  transform: translateX(-50%);
-}
-.sekbid-column .box::before {
-  content: "";
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  width: 2px;
-  height: 20px;
-  background: #777;
-  transform: translateX(-50%);
-}
+    .sekbid-wrapper {
+      position: relative;
+      margin-top: 60px;
+    }
 
-@media (max-width: 768px) {
-  .flex-tight, .sekbid-flex {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .flex-tight::after, .sekbid-flex::before {
-    display: none;
-  }
-}
-</style>
+    .sekbid-flex {
+      display: flex;
+      justify-content: center;
+      gap: 120px; /* Lebih rapat */
+      position: relative;
+    }
+
+    .sekbid-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      gap: 25px;
+    }
+
+    .sekbid-column::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 2px;
+      height: 100%;
+      background: #777;
+      transform: translateX(-50%);
+    }
+
+    .sekbid-column .box::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      width: 2px;
+      height: 20px;
+      background: #777;
+      transform: translateX(-50%);
+    }
+
+    header {
+      margin-bottom: 30px;
+    }
+
+    .logo {
+      width: 80px;
+      vertical-align: middle;
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin: 20px 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    footer {
+      margin-top: 50px;
+      color: #666;
+      font-size: 0.85em;
+    }
+
+    @media (max-width: 768px) {
+      .flex-tight, .sekbid-flex {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <header class="top-header">
+  <header>
     <div class="header-container">
       <img src="images/logo_103.png" alt="Logo SMAN 103 Jakarta" class="logo">
       <h1>KESISWAAN SMAN 103 JAKARTA</h1>
     </div>
   </header>
 
-  <nav class="navbar">
+  <nav>
     <ul>
       <li><a href="1 - index.html">Tentang Kami</a></li>
       <li><a href="2 - profil.html">Profil & Organisasi</a></li>
@@ -155,98 +155,103 @@ body {
     <h2>Profil dan Organisasi</h2>
     <p>Sambutan dari Wakil Kepala Sekolah Bidang Kesiswaan...</p>
 
-<div class="box"><div class="title">Kepala Sekolah</div></div>
-<div class="line"></div> <div class="name">Suparini, M.Pd</div>
-
-<div class="box"><div class="title">Wakil Kepala Sekolah Kesiswaan</div></div>
-<div class="line"></div> <div class="name">Cecep Irwan Irawan, S.Pd</div>
-
-<div class="box"><div class="title">Pembina OSIS dan Ekstrakurikuler</div></div>
-<div class="line"> Chandra D. K. Wulan</div>
-
-<div class="flex-tight">
-  <div class="box">
-    <div class="title">Ketua MPK</div>
-    <div class="name">Zahratunnisa Putri</div>
-  </div>
-  <div class="box">
-    <div class="title">Wakil Ketua MPK</div>
-    <div class="name">Rachel Dwijayanti</div>
-  </div>
-</div>
-
-<div class="line"></div>
-
-<div class="box"><div class="title">Wakil OSIS</div></div>
-<div class="line"></div>
-    
-<div class="box">
-  <div class="title">Ketua OSIS</div>
-  <div class="name">Felicia Angelica</div>
-</div>
-
-<div class="line"></div>
-
-<div class="flex-tight">
-  <div class="box">
-    <div class="title">Wakil Ketua OSIS 1</div>
-    <div class="name">Shiraj Nazli</div>
-  </div>
-  <div class="box">
-    <div class="title">Wakil Ketua OSIS 2</div>
-    <div class="name">Rasyanda Fitri Wibisono</div>
-  </div>
-</div>
-
-<div class="line"></div>
-
-<div class="flex-tight">
-  <div class="box">
-    <div class="title">Sekretaris 1</div>
-    <div class="name">Nabila Setyanisa</div>
-  </div>
-  <div class="box">
-    <div class="title">Sekretaris 2</div>
-    <div class="name">Clearesta Galena</div>
-  </div>
-</div>
-
-<div class="line"></div>
-
-<div class="box">
-  <div class="title">Bendahara</div>
-  <div class="name">Queensha Firlova</div>
-</div>
-
-<h3 style="margin-top:40px;">Seksi Bidang</h3>
-
-<div class="sekbid-wrapper">
-  <div class="sekbid-flex">
-    
-    <div class="sekbid-column">
-      <div class="box"><div class="title">Seksi Bidang 1</div><div class="name">Agatha Davinia W.<br>Nayla Putri K.</div></div>
-      <div class="box"><div class="title">Seksi Bidang 3</div><div class="name">Farah D. R. Sankara<br>Annisa Nur Nafiah</div></div>
-      <div class="box"><div class="title">Seksi Bidang 5</div><div class="name">Aira Ratu Anindita<br>Gerrard Namora</div></div>
-      <div class="box"><div class="title">Seksi Bidang 7</div><div class="name">Dustin Airell S. Budi<br>Khalista Naomi<br>Aflah Ardiyanta</div></div>
-      <div class="box"><div class="title">Seksi Bidang 9</div><div class="name">Revan Nur Hakim<br>Mishel Narumi A.<br>M. Naufal Athaya</div></div>
+    <div class="box">
+      <div class="title">Kepala Sekolah</div>
+      <div class="name">Suparini, M.Pd</div>
     </div>
 
-    <div class="sekbid-column">
-      <div class="box"><div class="title">Seksi Bidang 2</div><div class="name">Hairil Fahrezi Budiman<br>Nadia Khasanah</div></div>
-      <div class="box"><div class="title">Seksi Bidang 4</div><div class="name">Nafiisah Dewo Putri<br>Mauli Dwi Festania</div></div>
-      <div class="box"><div class="title">Seksi Bidang 6</div><div class="name">Siti Aisyah<br>M. Daffa</div></div>
-      <div class="box"><div class="title">Seksi Bidang 8</div><div class="name">Laura Kanaya<br>Adinda Zahra Calista</div></div>
-      <div class="box"><div class="title">Seksi Bidang 10</div><div class="name">Keane Faeyza<br>Hafizhatul Karimah</div></div>
+    <div class="line"></div>
+
+    <div class="box">
+      <div class="title">Wakil Kepala Sekolah Kesiswaan</div>
+      <div class="name">Cecep Irwan Irawan, S.Pd</div>
     </div>
 
-  </div>
-</div>
+    <div class="line"></div>
 
+    <div class="box">
+      <div class="title">Pembina OSIS dan Ekstrakurikuler</div>
+      <div class="name">Chandra D. K. Wulan</div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="flex-tight">
+      <div class="box">
+        <div class="title">Ketua MPK</div>
+        <div class="name">Zahratunnisa Putri</div>
+      </div>
+      <div class="box">
+        <div class="title">Wakil Ketua MPK</div>
+        <div class="name">Rachel Dwijayanti</div>
+      </div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="box">
+      <div class="title">Ketua OSIS</div>
+      <div class="name">Felicia Angelica</div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="flex-tight">
+      <div class="box">
+        <div class="title">Wakil Ketua OSIS 1</div>
+        <div class="name">Shiraj Nazli</div>
+      </div>
+      <div class="box">
+        <div class="title">Wakil Ketua OSIS 2</div>
+        <div class="name">Rasyanda Fitri Wibisono</div>
+      </div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="flex-tight">
+      <div class="box">
+        <div class="title">Sekretaris 1</div>
+        <div class="name">Nabila Setyanisa</div>
+      </div>
+      <div class="box">
+        <div class="title">Sekretaris 2</div>
+        <div class="name">Clearesta Galena</div>
+      </div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="box">
+      <div class="title">Bendahara</div>
+      <div class="name">Queensha Firlova</div>
+    </div>
+
+    <h3 style="margin-top:40px;">Seksi Bidang</h3>
+
+    <div class="sekbid-wrapper">
+      <div class="sekbid-flex">
+        <div class="sekbid-column">
+          <div class="box"><div class="title">Seksi Bidang 1</div><div class="name">Agatha Davinia W.<br>Nayla Putri K.</div></div>
+          <div class="box"><div class="title">Seksi Bidang 3</div><div class="name">Farah D. R. Sankara<br>Annisa Nur Nafiah</div></div>
+          <div class="box"><div class="title">Seksi Bidang 5</div><div class="name">Aira Ratu Anindita<br>Gerrard Namora</div></div>
+          <div class="box"><div class="title">Seksi Bidang 7</div><div class="name">Dustin Airell S. Budi<br>Khalista Naomi<br>Aflah Ardiyanta</div></div>
+          <div class="box"><div class="title">Seksi Bidang 9</div><div class="name">Revan Nur Hakim<br>Mishel Narumi A.<br>M. Naufal Athaya</div></div>
+        </div>
+
+        <div class="sekbid-column">
+          <div class="box"><div class="title">Seksi Bidang 2</div><div class="name">Hairil Fahrezi Budiman<br>Nadia Khasanah</div></div>
+          <div class="box"><div class="title">Seksi Bidang 4</div><div class="name">Nafiisah Dewo Putri<br>Mauli Dwi Festania</div></div>
+          <div class="box"><div class="title">Seksi Bidang 6</div><div class="name">Siti Aisyah<br>M. Daffa</div></div>
+          <div class="box"><div class="title">Seksi Bidang 8</div><div class="name">Laura Kanaya<br>Adinda Zahra Calista</div></div>
+          <div class="box"><div class="title">Seksi Bidang 10</div><div class="name">Keane Faeyza<br>Hafizhatul Karimah</div></div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <footer>
     <p>&copy; 2025 Kesiswaan SMAN 103 Jakarta</p>
   </footer>
 </body>
-
 </html>

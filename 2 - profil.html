@@ -1,284 +1,362 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Struktur Organisasi OSIS</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-<style>
-/* ======== Tema Umum ======== */
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
+  <meta charset="UTF-8">
+  <title>Profil & Organisasi | Kesiswaan SMAN 103</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
 
-/* ======== Header ======== */
-.top-header {
-    background-color: #fff;
-    border-bottom: 3px solid #3c78d8;
-    padding: 10px 0;
-    text-align: center;
-}
+    /* Header */
+    .top-header {
+      background-color: #fff;
+      border-bottom: 3px solid #3c78d8;
+      padding: 10px 0;
+      text-align: center;
+    }
 
-.header-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-}
+    .header-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
 
-.logo {
-    width: 60px;
-    height: auto;
-}
+    .logo {
+      width: 60px;
+      height: auto;
+    }
 
-h1 {
-    color: #3c78d8;
-    font-size: 1.6rem;
-    font-weight: 600;
-}
+    h1 {
+      color: #3c78d8;
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
 
-/* ======== Navbar ======== */
-.navbar {
-    background-color: #3c78d8;
-}
+    /* Navbar */
+    .navbar {
+      background-color: #3c78d8;
+    }
 
-.navbar ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
-    margin: 0;
-}
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      margin: 0;
+    }
 
-.navbar ul li a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: 0.3s;
-}
+    .navbar ul li a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
 
-.navbar ul li a:hover,
-.navbar ul li a.active {
-    background-color: #2456a8;
-}
+    .navbar ul li a:hover,
+    .navbar ul li a.active {
+      background-color: #2456a8;
+    }
 
-/* ======== Hero Section ======== */
-.hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('https://scontent.fcgk4-6.fna.fbcdn.net/v/t1.6435-9/115945821_323672415705443_2102656701385784646_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=vGKw1E181dcQ7kNvwGtq1q5&_nc_oc=AdlmMX6PdDBBvJMvGUgFvNGuJfYv9vx-MmpdqSFrARqsV_JtI9lJoJ9778GmHV5FQDM&_nc_zt=23&_nc_ht=scontent.fcgk4-6.fna&_nc_gid=VXzkh_KjSQnXFmUP_ag-VQ&oh=00_AfexrDmrpcsCpNVQmJsjtsAYknnejwYT4OpSFA7B2QGksA&oe=6916C975') center/cover;
-    height: 60vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-}
+    /* Content */
+    .content {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      margin-top: 30px;
+    }
 
-.hero h2 {
-    font-size: 2.5rem;
-}
+    .content h2 {
+      color: #3c78d8;
+      text-align: center;
+    }
 
-.hero p {
-    font-size: 1.2rem;
-}
+    .content p {
+      text-align: center;
+      margin-bottom: 40px;
+    }
 
-/* ======== Konten Struktur ======== */
-.content {
-    padding: 40px 20px;
-    max-width: 1000px;
-    margin: auto;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    margin-top: 30px;
-}
+    /* Struktur Organisasi */
+    .organization-chart {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 40px auto;
+    }
 
-/* Struktur Organisasi */
-.tree {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-}
+    .level {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      margin: 25px 0;
+    }
 
-.level {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
+    .level.single {
+      justify-content: center;
+    }
 
-.box {
-    background: #fff;
-    border: 2px solid #3c78d8;
-    border-radius: 10px;
-    padding: 10px 20px;
-    margin: 10px;
-    text-align: center;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    width: 230px;
-}
+    .box {
+      background: #fff;
+      border: 2px solid #3c78d8;
+      border-radius: 10px;
+      padding: 15px 25px;
+      margin: 0 25px;
+      text-align: center;
+      width: 210px;
+      position: relative;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
 
-.box h3 {
-    color: #3c78d8;
-    margin: 0;
-    font-size: 1rem;
-}
+    .box:hover {
+      transform: translateY(-4px);
+    }
 
-.box p {
-    margin: 3px 0 0;
-    font-size: 0.9rem;
-}
+    .box h3 {
+      color: #3c78d8;
+      font-size: 1rem;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
 
-/* Garis vertikal antar level */
-.level::after {
-    content: '';
-    position: absolute;
-    width: 2px;
-    height: 40px;
-    background: #3c78d8;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-}
+    .box p {
+      font-size: 0.9rem;
+      margin: 0;
+    }
 
-/* Hilangkan garis terakhir */
-.level:last-child::after {
-    display: none;
-}
+    /* Garis vertikal antar level */
+    .connector-vertical {
+      width: 2px;
+      height: 35px;
+      background-color: #3c78d8;
+    }
 
-/* Garis horizontal penghubung antar box kiri-kanan */
-.level > .box + .box::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: #3c78d8;
-    z-index: 0;
-}
+    /* Garis horizontal antar box */
+    .level::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 8%;
+      right: 8%;
+      height: 2px;
+      background-color: #3c78d8;
+      z-index: 0;
+    }
 
-/* Atur jarak antar level */
-.tree .level:not(:last-child) {
-    margin-bottom: 40px;
-}
+    .level.single::before {
+      display: none;
+    }
 
-/* Footer */
-footer {
-    background-color: #3c78d8;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    margin-top: 40px;
-}
-</style>
+    /* Garis kiri dan kanan antar box */
+    .box::before,
+    .box::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 25px;
+      height: 2px;
+      background-color: #3c78d8;
+    }
+
+    .box::before {
+      left: -25px;
+    }
+
+    .box::after {
+      right: -25px;
+    }
+
+    /* Hilangkan garis keluar kiri/kanan */
+    .no-left-line::before {
+      display: none;
+    }
+
+    .no-right-line::after {
+      display: none;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #3c78d8;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+
+    /* Responsif */
+    @media (max-width: 900px) {
+      .level {
+        flex-direction: column;
+      }
+
+      .level::before,
+      .box::before,
+      .box::after {
+        display: none;
+      }
+
+      .connector-vertical {
+        height: 20px;
+      }
+
+      .box {
+        margin: 10px 0;
+        width: 80%;
+      }
+    }
+  </style>
 </head>
+
 <body>
-
-<!-- Header -->
-<div class="top-header">
+  <header class="top-header">
     <div class="header-container">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Logo_OSIS.png" alt="Logo" class="logo">
-        <h1>Struktur Organisasi OSIS</h1>
+      <img src="images/logo_103.png" alt="Logo SMAN 103 Jakarta" class="logo">
+      <h1>KESISWAAN SMAN 103 JAKARTA</h1>
     </div>
-</div>
+  </header>
 
-<!-- Navbar -->
-<div class="navbar">
+  <nav class="navbar">
     <ul>
-        <li><a href="#" class="active">Beranda</a></li>
-        <li><a href="#">Profil</a></li>
-        <li><a href="#">Kegiatan</a></li>
-        <li><a href="#">Kontak</a></li>
+      <li><a href="1 - index.html">Tentang Kami</a></li>
+      <li><a href="2 - profil.html" class="active">Profil & Organisasi</a></li>
+      <li><a href="3 - kegiatan.html">Kegiatan & Pengembangan</a></li>
+      <li><a href="4 - tatatertib.html">Tata Tertib & Administrasi</a></li>
+      <li><a href="5 - publikasi.html">Informasi & Publikasi</a></li>
     </ul>
-</div>
+  </nav>
 
-<!-- Hero -->
-<section class="hero">
-    <div>
-        <h2>OSIS SMA Contoh Negeri 1</h2>
-        <p>Bersatu, Berkarya, dan Berprestasi!</p>
+  <section class="content">
+    <h2>Struktur Organisasi Kesiswaan</h2>
+    <p>Berikut adalah struktur organisasi bidang kesiswaan SMAN 103 Jakarta tahun 2025.</p>
+
+    <div class="organization-chart">
+
+      <!-- MPK -->
+      <div class="level">
+        <div class="box no-left-line">
+          <h3>Ketua MPK</h3>
+          <p>Zahratunnisa Putri</p>
+        </div>
+        <div class="box no-right-line">
+          <h3>Wakil Ketua MPK</h3>
+          <p>Rachel Dwijayanti</p>
+        </div>
+      </div>
+
+      <div class="connector-vertical"></div>
+
+      <!-- Ketua OSIS -->
+      <div class="level single">
+        <div class="box">
+          <h3>Ketua OSIS</h3>
+          <p>Felicia Angelica</p>
+        </div>
+      </div>
+
+      <div class="connector-vertical"></div>
+
+      <!-- Wakil Ketua OSIS -->
+      <div class="level">
+        <div class="box no-left-line">
+          <h3>Wakil Ketua OSIS 1</h3>
+          <p>Shiraj Nazli</p>
+        </div>
+        <div class="box no-right-line">
+          <h3>Wakil Ketua OSIS 2</h3>
+          <p>Rasyanda Fitri Wibisono</p>
+        </div>
+      </div>
+
+      <div class="connector-vertical"></div>
+
+      <!-- Sekretaris -->
+      <div class="level">
+        <div class="box no-left-line">
+          <h3>Sekretaris 1</h3>
+          <p>Nabila Setyanisa</p>
+        </div>
+        <div class="box no-right-line">
+          <h3>Sekretaris 2</h3>
+          <p>Clearesta Galena</p>
+        </div>
+      </div>
+
+      <div class="connector-vertical"></div>
+
+      <!-- Bendahara -->
+      <div class="level single">
+        <div class="box">
+          <h3>Bendahara</h3>
+          <p>Queensha Firlova</p>
+        </div>
+      </div>
+
+      <div class="connector-vertical"></div>
+
+      <!-- Sekbid 1-5 -->
+      <div class="level">
+        <div class="box no-left-line">
+          <h3>Sekbid 1</h3>
+          <p>Agatha Davinia W.<br>Nayla Putri K.</p>
+        </div>
+        <div class="box">
+          <h3>Sekbid 2</h3>
+          <p>Hairil Fahrezi B.<br>Nadia Khasanah</p>
+        </div>
+        <div class="box">
+          <h3>Sekbid 3</h3>
+          <p>Farah D. R. Sankara<br>Annisa Nur Nafiah</p>
+        </div>
+        <div class="box">
+          <h3>Sekbid 4</h3>
+          <p>Nafiisah Dewo Putri<br>Mauli Dwi Festania</p>
+        </div>
+        <div class="box no-right-line">
+          <h3>Sekbid 5</h3>
+          <p>Aira Ratu Anindita<br>Gerrard Namora</p>
+        </div>
+      </div>
+
+      <!-- Sekbid 6–10 -->
+      <div class="level">
+        <div class="box no-left-line">
+          <h3>Sekbid 6</h3>
+          <p>Siti Aisyah<br>M. Daffa</p>
+        </div>
+        <div class="box">
+          <h3>Sekbid 7</h3>
+          <p>Dustin Airell S. Budi<br>Khalista Naomi<br>Aflah Ardiyanta</p>
+        </div>
+        <div class="box">
+          <h3>Sekbid 8</h3>
+          <p>Laura Kanaya<br>Adinda Zahra Calista</p>
+        </div>
+        <div class="box">
+          <h3>Sekbid 9</h3>
+          <p>Revan Nur Hakim<br>Mishel Narumi A.<br>M. Naufal Athaya</p>
+        </div>
+        <div class="box no-right-line">
+          <h3>Sekbid 10</h3>
+          <p>Keane Faeyza<br>Hafizhatul Karimah</p>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- Struktur -->
-<section class="content">
-    <div class="tree">
-        <div class="level">
-            <div class="box">
-                <h3>Ketua MPK</h3>
-                <p>Zahratunnisa Putri</p>
-            </div>
-            <div class="box">
-                <h3>Wakil Ketua MPK</h3>
-                <p>Rachel Dwijayanti</p>
-            </div>
-        </div>
-
-        <div class="level">
-            <div class="box">
-                <h3>Ketua OSIS</h3>
-                <p>Felicia Angelica</p>
-            </div>
-        </div>
-
-        <div class="level">
-            <div class="box">
-                <h3>Wakil Ketua OSIS 1</h3>
-                <p>Shiraj Nazli</p>
-            </div>
-            <div class="box">
-                <h3>Wakil Ketua OSIS 2</h3>
-                <p>Rasyanda Fitri Wibisono</p>
-            </div>
-        </div>
-
-        <div class="level">
-            <div class="box">
-                <h3>Sekretaris 1</h3>
-                <p>Nabila Setyanisa</p>
-            </div>
-            <div class="box">
-                <h3>Sekretaris 2</h3>
-                <p>Clearesta Galena</p>
-            </div>
-        </div>
-
-        <div class="level">
-            <div class="box">
-                <h3>Bendahara</h3>
-                <p>Queensha Firlova</p>
-            </div>
-        </div>
-
-        <!-- Contoh Sekbid -->
-        <div class="level">
-            <div class="box"><h3>Sekbid 1</h3><p>Kebersihan dan Kedisiplinan</p></div>
-            <div class="box"><h3>Sekbid 2</h3><p>Kerohanian</p></div>
-            <div class="box"><h3>Sekbid 3</h3><p>Kewirausahaan</p></div>
-            <div class="box"><h3>Sekbid 4</h3><p>Prestasi dan Akademik</p></div>
-            <div class="box"><h3>Sekbid 5</h3><p>Kesenian</p></div>
-            <div class="box"><h3>Sekbid 6</h3><p>Olahraga</p></div>
-            <div class="box"><h3>Sekbid 7</h3><p>Kepramukaan</p></div>
-            <div class="box"><h3>Sekbid 8</h3><p>Lingkungan</p></div>
-            <div class="box"><h3>Sekbid 9</h3><p>TIK dan Dokumentasi</p></div>
-            <div class="box"><h3>Sekbid 10</h3><p>Humas dan Publikasi</p></div>
-        </div>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer>
-    <p>&copy; 2025 OSIS SMA Contoh Negeri 1. Semua Hak Dilindungi.</p>
-</footer>
-
+  <footer>
+    <p>&copy; 2025 Kesiswaan SMAN 103 Jakarta</p>
+  </footer>
 </body>
 </html>
-

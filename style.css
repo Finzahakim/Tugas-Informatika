@@ -1,0 +1,104 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.top-header {
+    background-color: #fff;
+    border-bottom: 3px solid #3c78d8;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+}
+
+h1 {
+    color: #3c78d8;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #3c78d8;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+    background-color: #2456a8;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('https://scontent.fcgk4-6.fna.fbcdn.net/v/t1.6435-9/115945821_323672415705443_2102656701385784646_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=vGKw1E181dcQ7kNvwGtq1q5&_nc_oc=AdlmMX6PdDBBvJMvGUgFvNGuJfYv9vx-MmpdqSFrARqsV_JtI9lJoJ9778GmHV5FQDM&_nc_zt=23&_nc_ht=scontent.fcgk4-6.fna&_nc_gid=VXzkh_KjSQnXFmUP_ag-VQ&oh=00_AfexrDmrpcsCpNVQmJsjtsAYknnejwYT4OpSFA7B2QGksA&oe=6916C975') center/cover;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* Content */
+.content {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.content h2 {
+    color: #3c78d8;
+}
+
+/* Footer */
+footer {
+    background-color: #3c78d8;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+}

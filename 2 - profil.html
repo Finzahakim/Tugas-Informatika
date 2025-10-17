@@ -91,12 +91,13 @@ h1 {
 /* ======== Konten Struktur ======== */
 .content {
     padding: 40px 20px;
-    max-width: 1000px;
+    max-width: 900px;
     margin: auto;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     margin-top: 30px;
+    position: relative;
 }
 
 /* Struktur Organisasi */
@@ -107,11 +108,17 @@ h1 {
     position: relative;
 }
 
-.level {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+/* Garis utama vertikal */
+.tree::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    background: #3c78d8;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
 }
 
 .box {
@@ -119,10 +126,12 @@ h1 {
     border: 2px solid #3c78d8;
     border-radius: 10px;
     padding: 10px 20px;
-    margin: 10px;
     text-align: center;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     width: 230px;
+    margin: 25px 0;
+    z-index: 1;
+    position: relative;
 }
 
 .box h3 {
@@ -134,40 +143,6 @@ h1 {
 .box p {
     margin: 3px 0 0;
     font-size: 0.9rem;
-}
-
-/* Garis vertikal antar level */
-.level::after {
-    content: '';
-    position: absolute;
-    width: 2px;
-    height: 40px;
-    background: #3c78d8;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-/* Hilangkan garis terakhir */
-.level:last-child::after {
-    display: none;
-}
-
-/* Garis horizontal penghubung antar box kiri-kanan */
-.level > .box + .box::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: #3c78d8;
-    z-index: 0;
-}
-
-/* Atur jarak antar level */
-.tree .level:not(:last-child) {
-    margin-bottom: 40px;
 }
 
 /* Footer */
@@ -211,66 +186,48 @@ footer {
 <!-- Struktur -->
 <section class="content">
     <div class="tree">
-        <div class="level">
-            <div class="box">
-                <h3>Ketua MPK</h3>
-                <p>Zahratunnisa Putri</p>
-            </div>
-            <div class="box">
-                <h3>Wakil Ketua MPK</h3>
-                <p>Rachel Dwijayanti</p>
-            </div>
+        <div class="box">
+            <h3>Ketua MPK</h3>
+            <p>Zahratunnisa Putri</p>
         </div>
-
-        <div class="level">
-            <div class="box">
-                <h3>Ketua OSIS</h3>
-                <p>Felicia Angelica</p>
-            </div>
+        <div class="box">
+            <h3>Wakil Ketua MPK</h3>
+            <p>Rachel Dwijayanti</p>
         </div>
-
-        <div class="level">
-            <div class="box">
-                <h3>Wakil Ketua OSIS 1</h3>
-                <p>Shiraj Nazli</p>
-            </div>
-            <div class="box">
-                <h3>Wakil Ketua OSIS 2</h3>
-                <p>Rasyanda Fitri Wibisono</p>
-            </div>
+        <div class="box">
+            <h3>Ketua OSIS</h3>
+            <p>Felicia Angelica</p>
         </div>
-
-        <div class="level">
-            <div class="box">
-                <h3>Sekretaris 1</h3>
-                <p>Nabila Setyanisa</p>
-            </div>
-            <div class="box">
-                <h3>Sekretaris 2</h3>
-                <p>Clearesta Galena</p>
-            </div>
+        <div class="box">
+            <h3>Wakil Ketua OSIS 1</h3>
+            <p>Shiraj Nazli</p>
         </div>
-
-        <div class="level">
-            <div class="box">
-                <h3>Bendahara</h3>
-                <p>Queensha Firlova</p>
-            </div>
+        <div class="box">
+            <h3>Wakil Ketua OSIS 2</h3>
+            <p>Rasyanda Fitri Wibisono</p>
         </div>
-
-        <!-- Contoh Sekbid -->
-        <div class="level">
-            <div class="box"><h3>Sekbid 1</h3><p>Kebersihan dan Kedisiplinan</p></div>
-            <div class="box"><h3>Sekbid 2</h3><p>Kerohanian</p></div>
-            <div class="box"><h3>Sekbid 3</h3><p>Kewirausahaan</p></div>
-            <div class="box"><h3>Sekbid 4</h3><p>Prestasi dan Akademik</p></div>
-            <div class="box"><h3>Sekbid 5</h3><p>Kesenian</p></div>
-            <div class="box"><h3>Sekbid 6</h3><p>Olahraga</p></div>
-            <div class="box"><h3>Sekbid 7</h3><p>Kepramukaan</p></div>
-            <div class="box"><h3>Sekbid 8</h3><p>Lingkungan</p></div>
-            <div class="box"><h3>Sekbid 9</h3><p>TIK dan Dokumentasi</p></div>
-            <div class="box"><h3>Sekbid 10</h3><p>Humas dan Publikasi</p></div>
+        <div class="box">
+            <h3>Sekretaris 1</h3>
+            <p>Nabila Setyanisa</p>
         </div>
+        <div class="box">
+            <h3>Sekretaris 2</h3>
+            <p>Clearesta Galena</p>
+        </div>
+        <div class="box">
+            <h3>Bendahara</h3>
+            <p>Queensha Firlova</p>
+        </div>
+        <div class="box"><h3>Sekbid 1</h3><p>Kebersihan dan Kedisiplinan</p></div>
+        <div class="box"><h3>Sekbid 2</h3><p>Kerohanian</p></div>
+        <div class="box"><h3>Sekbid 3</h3><p>Kewirausahaan</p></div>
+        <div class="box"><h3>Sekbid 4</h3><p>Prestasi dan Akademik</p></div>
+        <div class="box"><h3>Sekbid 5</h3><p>Kesenian</p></div>
+        <div class="box"><h3>Sekbid 6</h3><p>Olahraga</p></div>
+        <div class="box"><h3>Sekbid 7</h3><p>Kepramukaan</p></div>
+        <div class="box"><h3>Sekbid 8</h3><p>Lingkungan</p></div>
+        <div class="box"><h3>Sekbid 9</h3><p>TIK dan Dokumentasi</p></div>
+        <div class="box"><h3>Sekbid 10</h3><p>Humas dan Publikasi</p></div>
     </div>
 </section>
 

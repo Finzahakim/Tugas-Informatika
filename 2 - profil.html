@@ -1,222 +1,242 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Profil & Organisasi | Kesiswaan SMAN 103</title>
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f8f9fa;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
+<meta charset="UTF-8">
+<title>Profil & Organisasi | Kesiswaan SMAN 103</title>
+<style>
+/* ========== GAYA UTAMA UMUM ========== */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
 
-    /* Header */
-    .top-header {
-      background-color: #fff;
-      border-bottom: 3px solid #3c78d8;
-      padding: 10px 0;
-      text-align: center;
-    }
+/* HEADER */
+.top-header {
+  background-color: #fff;
+  border-bottom: 3px solid #3c78d8;
+  padding: 10px 0;
+}
 
-    .header-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 15px;
-    }
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
 
-    .logo {
-      width: 60px;
-      height: auto;
-    }
+.logo {
+  width: 70px;
+  height: auto;
+}
 
-    h1 {
-      color: #3c78d8;
-      font-size: 1.6rem;
-      font-weight: 600;
-    }
+h1 {
+  color: #3c78d8;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
 
-    /* Navbar */
-    .navbar {
-      background-color: #3c78d8;
-    }
+/* NAVBAR */
+.navbar {
+  background-color: #3c78d8;
+}
 
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      padding: 10px 0;
-      margin: 0;
-    }
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  margin: 0;
+}
 
-    .navbar ul li a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      padding: 8px 12px;
-      border-radius: 5px;
-      transition: 0.3s;
-    }
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
 
-    .navbar ul li a:hover,
-    .navbar ul li a.active {
-      background-color: #2456a8;
-    }
+.navbar ul li a:hover,
+.navbar ul li a.active {
+  background-color: #2456a8;
+}
 
-    /* Content */
-    .content {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-      background-color: #fff;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-      margin-top: 30px;
-    }
+/* ========== KONTEN ORGANISASI ========== */
+.content {
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: 40px auto;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
 
-    .content h2 {
-      color: #3c78d8;
-      text-align: center;
-    }
+.content h2 {
+  color: #3c78d8;
+}
 
-    .content p {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+.box {
+  background: #fff;
+  border: 2px solid #3c78d8;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 15px 25px;
+  margin: 10px;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  z-index: 1;
+}
 
-    /* Struktur Organisasi */
-    .organization-chart {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 40px auto;
-    }
+.title { font-weight: 600; color: #3c78d8; }
+.name { font-size: 0.9em; color: #555; margin-top: 5px; }
 
-    .level {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      margin: 25px 0;
-    }
+/* Garis vertikal antar bagian */
+.line {
+  width: 2px;
+  height: 30px;
+  background: #3c78d8;
+  margin: 0 auto;
+  position: relative;
+  z-index: 0;
+}
 
-    .level.single {
-      justify-content: center;
-    }
+/* FLEX UTAMA UNTUK HUBUNGAN BOX */
+.flex-tight {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  position: relative;
+  margin: 25px auto;
+  width: fit-content;
+}
 
-    .box {
-      background: #fff;
-      border: 2px solid #3c78d8;
-      border-radius: 10px;
-      padding: 15px 25px;
-      margin: 0 25px;
-      text-align: center;
-      width: 210px;
-      position: relative;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
+.flex-tight::before {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #3c78d8;
+  z-index: 0;
+}
 
-    .box:hover {
-      transform: translateY(-4px);
-    }
+.flex-tight::after {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 30px;
+  background: #3c78d8;
+  z-index: 0;
+}
 
-    .box h3 {
-      color: #3c78d8;
-      font-size: 1rem;
-      margin-bottom: 5px;
-      font-weight: 600;
-    }
+/* SEKSI BIDANG */
+.sekbid-wrapper {
+  position: relative;
+  margin-top: 60px;
+}
 
-    .box p {
-      font-size: 0.9rem;
-      margin: 0;
-    }
+.sekbid-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  width: 2px;
+  height: 40px;
+  background: #3c78d8;
+  transform: translateX(-50%);
+}
 
-    /* Garis vertikal antar level */
-    .connector-vertical {
-      width: 2px;
-      height: 35px;
-      background-color: #3c78d8;
-    }
+.sekbid-flex {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 120px;
+  position: relative;
+  margin-top: 20px;
+}
 
-    /* Garis horizontal antar box */
-    .level::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 8%;
-      right: 8%;
-      height: 2px;
-      background-color: #3c78d8;
-      z-index: 0;
-    }
+.sekbid-flex::before {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  width: 400px;
+  height: 2px;
+  background: #3c78d8;
+  transform: translateX(-50%);
+}
 
-    .level.single::before {
-      display: none;
-    }
+.sekbid-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  gap: 25px;
+}
 
-    /* Garis kiri dan kanan antar box */
-    .box::before,
-    .box::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      width: 25px;
-      height: 2px;
-      background-color: #3c78d8;
-    }
+.sekbid-column::before {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  width: 2px;
+  height: calc(100% - 150px);
+  background: #3c78d8;
+  transform: translateX(-50%);
+}
 
-    .box::before {
-      left: -25px;
-    }
+.sekbid-column:last-child::before {
+  height: calc(100% - 150px);
+}
 
-    .box::after {
-      right: -25px;
-    }
+.sekbid-column:first-child::before {
+  height: calc(100% - 150px);
+}
 
-    /* Hilangkan garis keluar kiri/kanan */
-    .no-left-line::before {
-      display: none;
-    }
+.sekbid-column .box::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  width: 2px;
+  height: 20px;
+  background: #3c78d8;
+  transform: translateX(-50%);
+}
 
-    .no-right-line::after {
-      display: none;
-    }
+/* FOOTER */
+footer {
+  background-color: #3c78d8;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+  border-top: 3px solid #2456a8;
+}
 
-    /* Footer */
-    footer {
-      background-color: #3c78d8;
-      color: white;
-      text-align: center;
-      padding: 15px 0;
-      margin-top: 40px;
-    }
-
-    /* Responsif */
-    @media (max-width: 900px) {
-      .level {
-        flex-direction: column;
-      }
-
-      .level::before,
-      .box::before,
-      .box::after {
-        display: none;
-      }
-
-      .connector-vertical {
-        height: 20px;
-      }
-
-      .box {
-        margin: 10px 0;
-        width: 80%;
-      }
-    }
-  </style>
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .flex-tight, .sekbid-flex {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .flex-tight::before, .sekbid-flex::before,
+  .flex-tight::after, .sekbid-wrapper::before {
+    display: none;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -231,125 +251,81 @@
     <ul>
       <li><a href="1 - index.html">Tentang Kami</a></li>
       <li><a href="2 - profil.html" class="active">Profil & Organisasi</a></li>
-      <li><a href="3 - kegiatan.html">Kegiatan & Pengembangan</a></li>
-      <li><a href="4 - tatatertib.html">Tata Tertib & Administrasi</a></li>
-      <li><a href="5 - publikasi.html">Informasi & Publikasi</a></li>
+      <li><a href="3 - kegiatan.html">Kegiatan</a></li>
+      <li><a href="4 - tatatertib.html">Tata Tertib</a></li>
+      <li><a href="5 - publikasi.html">Publikasi</a></li>
     </ul>
   </nav>
 
   <section class="content">
-    <h2>Struktur Organisasi Kesiswaan</h2>
-    <p>Berikut adalah struktur organisasi bidang kesiswaan SMAN 103 Jakarta tahun 2025.</p>
+    <h2>Profil dan Organisasi</h2>
+    <p>Sambutan dari Wakil Kepala Sekolah Bidang Kesiswaan...</p>
 
-    <div class="organization-chart">
+    <!-- Kepala Sekolah -->
+    <div class="box">
+      <div class="title">Kepala Sekolah</div>
+      <div class="name">Suparini, M.Pd</div>
+    </div>
+    <div class="line"></div>
 
-      <!-- MPK -->
-      <div class="level">
-        <div class="box no-left-line">
-          <h3>Ketua MPK</h3>
-          <p>Zahratunnisa Putri</p>
-        </div>
-        <div class="box no-right-line">
-          <h3>Wakil Ketua MPK</h3>
-          <p>Rachel Dwijayanti</p>
-        </div>
-      </div>
+    <!-- Wakil Kepala Sekolah -->
+    <div class="box">
+      <div class="title">Wakil Kepala Sekolah Kesiswaan</div>
+      <div class="name">Cecep Irwan Irawan, S.Pd</div>
+    </div>
+    <div class="line"></div>
 
-      <div class="connector-vertical"></div>
+    <!-- Pembina -->
+    <div class="box">
+      <div class="title">Pembina OSIS dan Ekstrakurikuler</div>
+      <div class="name">Chandra D. K. Wulan</div>
+    </div>
+    <div class="line"></div>
 
-      <!-- Ketua OSIS -->
-      <div class="level single">
-        <div class="box">
-          <h3>Ketua OSIS</h3>
-          <p>Felicia Angelica</p>
-        </div>
-      </div>
+    <!-- MPK -->
+    <div class="flex-tight">
+      <div class="box"><div class="title">Ketua MPK</div><div class="name">Zahratunnisa Putri</div></div>
+      <div class="box"><div class="title">Wakil Ketua MPK</div><div class="name">Rachel Dwijayanti</div></div>
+    </div>
 
-      <div class="connector-vertical"></div>
+    <!-- OSIS -->
+    <div class="flex-tight">
+      <div class="box"><div class="title">Ketua OSIS</div><div class="name">Felicia Angelica</div></div>
+    </div>
 
-      <!-- Wakil Ketua OSIS -->
-      <div class="level">
-        <div class="box no-left-line">
-          <h3>Wakil Ketua OSIS 1</h3>
-          <p>Shiraj Nazli</p>
-        </div>
-        <div class="box no-right-line">
-          <h3>Wakil Ketua OSIS 2</h3>
-          <p>Rasyanda Fitri Wibisono</p>
-        </div>
-      </div>
+    <div class="flex-tight">
+      <div class="box"><div class="title">Wakil Ketua OSIS 1</div><div class="name">Shiraj Nazli</div></div>
+      <div class="box"><div class="title">Wakil Ketua OSIS 2</div><div class="name">Rasyanda Fitri Wibisono</div></div>
+    </div>
 
-      <div class="connector-vertical"></div>
+    <div class="flex-tight">
+      <div class="box"><div class="title">Sekretaris 1</div><div class="name">Nabila Setyanisa</div></div>
+      <div class="box"><div class="title">Sekretaris 2</div><div class="name">Clearesta Galena</div></div>
+    </div>
 
-      <!-- Sekretaris -->
-      <div class="level">
-        <div class="box no-left-line">
-          <h3>Sekretaris 1</h3>
-          <p>Nabila Setyanisa</p>
-        </div>
-        <div class="box no-right-line">
-          <h3>Sekretaris 2</h3>
-          <p>Clearesta Galena</p>
-        </div>
-      </div>
+    <div class="flex-tight">
+      <div class="box"><div class="title">Bendahara</div><div class="name">Queensha Firlova</div></div>
+    </div>
 
-      <div class="connector-vertical"></div>
+    <h3 style="margin-top:40px;">Seksi Bidang</h3>
 
-      <!-- Bendahara -->
-      <div class="level single">
-        <div class="box">
-          <h3>Bendahara</h3>
-          <p>Queensha Firlova</p>
+    <!-- SEKSI BIDANG -->
+    <div class="sekbid-wrapper">
+      <div class="sekbid-flex">
+        <div class="sekbid-column">
+          <div class="box"><div class="title">Seksi Bidang 1</div><div class="name">Agatha Davinia W.<br>Nayla Putri K.</div></div>
+          <div class="box"><div class="title">Seksi Bidang 3</div><div class="name">Farah D. R. Sankara<br>Annisa Nur Nafiah</div></div>
+          <div class="box"><div class="title">Seksi Bidang 5</div><div class="name">Aira Ratu Anindita<br>Gerrard Namora</div></div>
+          <div class="box"><div class="title">Seksi Bidang 7</div><div class="name">Dustin Airell S. Budi<br>Khalista Naomi<br>Aflah Ardiyanta</div></div>
+          <div class="box"><div class="title">Seksi Bidang 9</div><div class="name">Revan Nur Hakim<br>Mishel Narumi A.<br>M. Naufal Athaya</div></div>
         </div>
-      </div>
 
-      <div class="connector-vertical"></div>
-
-      <!-- Sekbid 1-5 -->
-      <div class="level">
-        <div class="box no-left-line">
-          <h3>Sekbid 1</h3>
-          <p>Agatha Davinia W.<br>Nayla Putri K.</p>
-        </div>
-        <div class="box">
-          <h3>Sekbid 2</h3>
-          <p>Hairil Fahrezi B.<br>Nadia Khasanah</p>
-        </div>
-        <div class="box">
-          <h3>Sekbid 3</h3>
-          <p>Farah D. R. Sankara<br>Annisa Nur Nafiah</p>
-        </div>
-        <div class="box">
-          <h3>Sekbid 4</h3>
-          <p>Nafiisah Dewo Putri<br>Mauli Dwi Festania</p>
-        </div>
-        <div class="box no-right-line">
-          <h3>Sekbid 5</h3>
-          <p>Aira Ratu Anindita<br>Gerrard Namora</p>
-        </div>
-      </div>
-
-      <!-- Sekbid 6–10 -->
-      <div class="level">
-        <div class="box no-left-line">
-          <h3>Sekbid 6</h3>
-          <p>Siti Aisyah<br>M. Daffa</p>
-        </div>
-        <div class="box">
-          <h3>Sekbid 7</h3>
-          <p>Dustin Airell S. Budi<br>Khalista Naomi<br>Aflah Ardiyanta</p>
-        </div>
-        <div class="box">
-          <h3>Sekbid 8</h3>
-          <p>Laura Kanaya<br>Adinda Zahra Calista</p>
-        </div>
-        <div class="box">
-          <h3>Sekbid 9</h3>
-          <p>Revan Nur Hakim<br>Mishel Narumi A.<br>M. Naufal Athaya</p>
-        </div>
-        <div class="box no-right-line">
-          <h3>Sekbid 10</h3>
-          <p>Keane Faeyza<br>Hafizhatul Karimah</p>
+        <div class="sekbid-column">
+          <div class="box"><div class="title">Seksi Bidang 2</div><div class="name">Hairil Fahrezi Budiman<br>Nadia Khasanah</div></div>
+          <div class="box"><div class="title">Seksi Bidang 4</div><div class="name">Nafiisah Dewo Putri<br>Mauli Dwi Festania</div></div>
+          <div class="box"><div class="title">Seksi Bidang 6</div><div class="name">Siti Aisyah<br>M. Daffa</div></div>
+          <div class="box"><div class="title">Seksi Bidang 8</div><div class="name">Laura Kanaya<br>Adinda Zahra Calista</div></div>
+          <div class="box"><div class="title">Seksi Bidang 10</div><div class="name">Keane Faeyza<br>Hafizhatul Karimah</div></div>
         </div>
       </div>
     </div>
@@ -360,3 +336,4 @@
   </footer>
 </body>
 </html>
+

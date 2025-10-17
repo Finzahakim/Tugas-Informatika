@@ -2,199 +2,70 @@
 <html lang="id">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Informasi & Publikasi | Kesiswaan SMAN 103</title>
-  <style>
-    /* --- Gaya umum --- */
-    body {
-      font-family: "Poppins", sans-serif;
-      margin: 0;
-      background: #f7faff;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    header {
-      background: linear-gradient(90deg, #004aad, #0078d7);
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .logo {
-      width: 80px;
-      vertical-align: middle;
-      margin-right: 10px;
-    }
-
-    h1 {
-      display: inline-block;
-      font-size: 1.8em;
-      vertical-align: middle;
-    }
-
-    /* --- Navigasi --- */
-    .navbar {
-      background: #0066cc;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    }
-
-    .navbar ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .navbar li {
-      margin: 0;
-    }
-
-    .navbar a {
-      display: block;
-      padding: 14px 22px;
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-
-    .navbar a:hover,
-    .navbar .active {
-      background: #004aad;
-      border-radius: 5px;
-    }
-
-    /* --- Konten utama --- */
-    .content {
-      max-width: 900px;
-      margin: 40px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    h2 {
-      color: #004aad;
-      text-align: center;
-      margin-bottom: 25px;
-    }
-
-    h3 {
-      color: #0066cc;
-      margin-top: 30px;
-    }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    ul li {
-      background: #f0f6ff;
-      margin: 8px 0;
-      padding: 10px 15px;
-      border-left: 5px solid #0078d7;
-      border-radius: 6px;
-      transition: transform 0.2s, background 0.2s;
-      cursor: pointer;
-    }
-
-    ul li:hover {
-      background: #dbe9ff;
-      transform: translateX(5px);
-    }
-
-    /* --- Footer --- */
-    footer {
-      background: #004aad;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 40px;
-      font-size: 0.9em;
-    }
-
-    /* --- Animasi --- */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* --- Responsif --- */
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 1.4em;
-      }
-
-      .navbar a {
-        padding: 12px;
-        font-size: 0.9em;
-      }
-
-      .content {
-        padding: 20px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Informasi & Publikasi | Kesiswaan SMAN 103</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <header>
-    <img src="images/logo_103.png" alt="Logo SMAN 103 Jakarta" class="logo">
-    <h1>KESISWAAN SMAN 103 JAKARTA</h1>
-  </header>
+    <!-- Header -->
+    <header class="top-header">
+        <div class="header-container">
+            <img src="images/logo_103.png" alt="Logo SMAN 103 Jakarta" class="logo">
+            <h1>KESISWAAN SMAN 103 JAKARTA</h1>
+        </div>
+    </header>
 
-  <nav class="navbar">
-    <ul>
-      <li><a href="1 - index.html">Tentang Kami</a></li>
-      <li><a href="2 - profil.html">Profil & Organisasi</a></li>
-      <li><a href="3 - kegiatan.html">Kegiatan & Pengembangan</a></li>
-      <li><a href="4 - tatatertib.html">Tata Tertib & Administrasi</a></li>
-      <li><a href="5 - publikasi.html" class="active">Informasi & Publikasi</a></li>
-    </ul>
-  </nav>
+    <!-- Navigasi -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="1 - index.html">Tentang Kami</a></li>
+            <li><a href="2 - profil.html">Profil & Organisasi</a></li>
+            <li><a href="3 - kegiatan.html">Kegiatan & Pengembangan</a></li>
+            <li><a href="4 - tatatertib.html">Tata Tertib & Administrasi</a></li>
+            <li><a href="5 - publikasi.html" class="active">Informasi & Publikasi</a></li>
+        </ul>
+    </nav>
 
-  <section class="content">
-    <h2>D. Informasi dan Publikasi</h2>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div>
+            <h2>Informasi dan Publikasi</h2>
+            <p>Berita kegiatan siswa, pengumuman, serta artikel seputar pengembangan karakter dan prestasi siswa.</p>
+        </div>
+    </section>
 
-    <h3>📢 Media Publikasi</h3>
-    <ul>
-      <li>Instagram (<strong>aktif</strong>)</li>
-      <li>YouTube (<strong>jarang digunakan</strong>)</li>
-      <li>Website (<strong>tidak aktif</strong>)</li>
-      <li>Mading (<strong>manual</strong>)</li>
-    </ul>
+    <!-- Konten Utama -->
+    <section class="content">
+        <h2>D. Informasi dan Publikasi</h2>
+        <p>Bagian ini memuat media publikasi, dokumentasi kegiatan, serta tujuan publikasi dari Kesiswaan SMAN 103 Jakarta.</p>
 
-    <h3>📸 Dokumentasi</h3>
-    <ul>
-      <li>Berasal dari pendamping atau siswa peserta kegiatan.</li>
-      <li>Digunakan untuk publikasi dan arsip prestasi.</li>
-    </ul>
+        <h3>📢 Media Publikasi</h3>
+        <ul>
+            <li><strong>Instagram</strong> — aktif digunakan untuk berbagi kegiatan dan prestasi siswa.</li>
+            <li><strong>YouTube</strong> — tersedia namun jarang diperbarui.</li>
+            <li><strong>Website</strong> — belum aktif sepenuhnya sebagai media publikasi digital.</li>
+            <li><strong>Mading</strong> — media manual di sekolah yang tetap digunakan untuk informasi dan karya siswa.</li>
+        </ul>
 
-    <h3>🎯 Tujuan Publikasi</h3>
-    <ul>
-      <li>Menyampaikan informasi.</li>
-      <li>Memberi apresiasi.</li>
-      <li>Merekam jejak kegiatan siswa.</li>
-    </ul>
-  </section>
+        <h3>📸 Dokumentasi</h3>
+        <ul>
+            <li>Foto dan video berasal dari pendamping kegiatan atau siswa yang berpartisipasi.</li>
+            <li>Semua dokumentasi digunakan untuk publikasi, arsip prestasi, dan laporan kegiatan sekolah.</li>
+        </ul>
 
-  <footer>
-    <p>&copy; 2025 Kesiswaan SMAN 103 Jakarta</p>
-  </footer>
+        <h3>🎯 Tujuan Publikasi</h3>
+        <ul>
+            <li>Menyampaikan informasi kegiatan siswa secara transparan dan menarik.</li>
+            <li>Memberikan apresiasi terhadap prestasi dan partisipasi siswa.</li>
+            <li>Merekam dan mengarsipkan jejak kegiatan siswa sebagai bagian dari sejarah sekolah.</li>
+        </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Kesiswaan SMAN 103 Jakarta</p>
+    </footer>
 </body>
 
 </html>

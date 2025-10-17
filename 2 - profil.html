@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Profil & Organisasi | Kesiswaan SMAN 103</title>
-  <link rel="stylesheet" href="style.css">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -13,10 +12,13 @@
       margin: 0;
     }
 
-    h2, h3 { color: #333; }
+    h1, h2, h3 {
+      color: #333;
+      margin: 10px 0;
+    }
 
     .box {
-      background: white;
+      background: #fff;
       border: 2px solid #ccc;
       border-radius: 10px;
       display: inline-block;
@@ -30,31 +32,90 @@
     .title { font-weight: 600; color: #333; }
     .name { font-size: 0.9em; color: #555; margin-top: 5px; }
 
+    /* Garis vertikal */
     .line {
       width: 2px;
       height: 30px;
       background: #777;
       margin: 0 auto;
+      position: relative;
     }
 
+    /* Flex rapat untuk pasangan seperti wakil/sekr */
     .flex-tight {
       display: flex;
       justify-content: center;
-      gap: 50px; /* Lebih rapat */
+      align-items: flex-start;
+      gap: 50px;
       position: relative;
-      margin-top: 10px;
+      margin: 20px auto;
+      width: fit-content;
     }
 
+    /* Garis horizontal penghubung antar box */
+    .flex-tight::before {
+      content: "";
+      position: absolute;
+      top: 25px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #777;
+      z-index: 0;
+    }
+
+    .flex-tight .box {
+      z-index: 1;
+      background: white;
+    }
+
+    /* Garis dari atas ke flex (misal dari Ketua ke Wakil) */
+    .flex-tight::after {
+      content: "";
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 30px;
+      background: #777;
+    }
+
+    /* Seksi bidang */
     .sekbid-wrapper {
       position: relative;
       margin-top: 60px;
     }
 
+    .sekbid-wrapper::before {
+      content: "";
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      width: 2px;
+      height: 40px;
+      background: #777;
+      transform: translateX(-50%);
+    }
+
     .sekbid-flex {
       display: flex;
       justify-content: center;
-      gap: 120px; /* Lebih rapat */
+      align-items: flex-start;
+      gap: 120px;
       position: relative;
+      margin-top: 20px;
+    }
+
+    .sekbid-flex::before {
+      content: "";
+      position: absolute;
+      top: 25px;
+      left: 50%;
+      width: 400px;
+      height: 2px;
+      background: #777;
+      transform: translateX(-50%);
     }
 
     .sekbid-column {
@@ -68,10 +129,10 @@
     .sekbid-column::before {
       content: "";
       position: absolute;
-      top: 0;
+      top: 25px;
       left: 50%;
       width: 2px;
-      height: 100%;
+      height: calc(100% - 25px);
       background: #777;
       transform: translateX(-50%);
     }
@@ -128,6 +189,12 @@
       .flex-tight, .sekbid-flex {
         flex-direction: column;
         gap: 15px;
+      }
+      .flex-tight::before, .sekbid-flex::before {
+        display: none;
+      }
+      .flex-tight::after {
+        display: none;
       }
     }
   </style>
@@ -187,14 +254,12 @@
       </div>
     </div>
 
-    <div class="line"></div>
-
-    <div class="box">
-      <div class="title">Ketua OSIS</div>
-      <div class="name">Felicia Angelica</div>
+    <div class="flex-tight">
+      <div class="box">
+        <div class="title">Ketua OSIS</div>
+        <div class="name">Felicia Angelica</div>
+      </div>
     </div>
-
-    <div class="line"></div>
 
     <div class="flex-tight">
       <div class="box">
@@ -207,8 +272,6 @@
       </div>
     </div>
 
-    <div class="line"></div>
-
     <div class="flex-tight">
       <div class="box">
         <div class="title">Sekretaris 1</div>
@@ -220,11 +283,11 @@
       </div>
     </div>
 
-    <div class="line"></div>
-
-    <div class="box">
-      <div class="title">Bendahara</div>
-      <div class="name">Queensha Firlova</div>
+    <div class="flex-tight">
+      <div class="box">
+        <div class="title">Bendahara</div>
+        <div class="name">Queensha Firlova</div>
+      </div>
     </div>
 
     <h3 style="margin-top:40px;">Seksi Bidang</h3>
@@ -255,3 +318,4 @@
   </footer>
 </body>
 </html>
+

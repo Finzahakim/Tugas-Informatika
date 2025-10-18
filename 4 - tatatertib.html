@@ -2,313 +2,410 @@
 <html lang="id">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Tata Tertib & Administrasi | Kesiswaan SMAN 103</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tata Tertib & Administrasi | Kesiswaan SMAN 103</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    /* Header */
+    .top-header {
+      background-color: #fff;
+      border-bottom: 3px solid #3c78d8;
+      padding: 10px 0;
+      text-align: center;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo {
+      width: 60px;
+      height: auto;
+      transition: transform 0.4s;
+    }
+
+    .logo:hover {
+      transform: scale(1.1);
+    }
+
+    h1 {
+      color: #3c78d8;
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #3c78d8;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    .navbar ul li a {
+      color: white;
+      text-decoration: none;
+      margin: 5px 15px;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+
+    .navbar ul li a:hover,
+    .navbar ul li a.active {
+      background-color: #2456a8;
+      transform: scale(1.05);
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('https://scontent.fcgk4-6.fna.fbcdn.net/v/t1.6435-9/115945821_323672415705443_2102656701385784646_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=vGKw1E181dcQ7kNvwGtq1q5&_nc_oc=AdlmMX6PdDBBvJMvGUgFvNGuJfYv9vx-MmpdqSFrARqsV_JtI9lJoJ9778GmHV5FQDM&_nc_zt=23&_nc_ht=scontent.fcgk4-6.fna&_nc_gid=VXzkh_KjSQnXFmUP_ag-VQ&oh=00_AfexrDmrpcsCpNVQmJsjtsAYknnejwYT4OpSFA7B2QGksA&oe=6916C975') center/cover;
+      height: 60vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      animation: slideUp 1.5s ease-in-out;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      animation: fadeIn 2.2s ease-in-out;
+    }
+
+    /* Content */
+    .content {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      margin-top: 30px;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .content h2 {
+      color: #3c78d8;
+      text-align: center;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* Kartu Tata Tertib */
+    .rules-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .rule-card {
+      background-color: #eef3ff;
+      border-left: 5px solid #3c78d8;
+      border-radius: 10px;
+      padding: 15px 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: zoomIn 0.8s ease;
+    }
+
+    .rule-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .rule-card h3 {
+      color: #2456a8;
+    }
+
+    .rule-card ul {
+      padding-left: 20px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #3c78d8;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+      font-weight: 500;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    /* Animasi */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <header class="top-header">
+  <!-- Header -->
+  <header class="top-header">
     <div class="header-container">
       <img src="images/logo_103.png" alt="Logo SMAN 103 Jakarta" class="logo">
       <h1>KESISWAAN SMAN 103 JAKARTA</h1>
     </div>
   </header>
 
-    <nav class="navbar">
+  <!-- Navbar -->
+  <nav class="navbar">
     <ul>
       <li><a href="index.html">Tentang Kami</a></li>
       <li><a href="2 - profil.html">Profil & Organisasi</a></li>
       <li><a href="3 - kegiatan.html">Kegiatan & Pengembangan</a></li>
-      <li><a href="4 - tatatertib.html">Tata Tertib & Administrasi</a></li>
+      <li><a href="4 - tatatertib.html" class="active">Tata Tertib & Administrasi</a></li>
       <li><a href="5 - publikasi.html">Informasi & Publikasi</a></li>
     </ul>
   </nav>
 
-    <section class="content">
-        <h2>Tata Tertib dan Administrasi</h2>
-        <p><strong>1. Pakaian Seragam Sekolah</strong></p>
-        <ul>
-        <p> a. Hari Senin</p>
-        <ul>
-          <li>Atasan: Kemeja putih lengan pendek (atau panjang bagi yang berjilbab) + atribut lengkap (dasi, badge OSIS, nama, bendera merah putih).
-          <li>Bawahan: Celana panjang/rok abu-abu model standar (tidak ketat, panjang sampai mata kaki).</li>
-          <Li>Lainnya:</Li>
-            <Li>Kaos dalam putih polos</Li>
-            <Li>Ikat pinggang hitam berlogo Tut Wuri Handayani</Li>
-            <Li>Kaos kaki putih (10 cm di atas mata kaki)</Li>
-            <Li>Sepatu hitam bertali hitam</Li>
-            <Li>Topi berlogo Tut Wuri Handayani (wajib saat upacara)</Li>
-            <Li>Jilbab putih polos menutupi dada (bagi yang berjilbab)
-          </li></Li>
-        </ul>
-        <p> b. Hari Selasa</p>
-        <ul>
-          <li>Seragam dan ketentuan sama seperti hari Senin, tanpa topi
-          </li></Li></ul>
-          <p> c. Hari Rabu</p>
-        <ul>
-          <li>Seragam Pramuka lengkap dengan hasduk dan atribut.
-          <Li>Atasan: Kemeja Pramuka (lengan pendek/lengan panjang bagi yang berjilbab).</Li>
-          <Li>Bawahan: Celana/rok coklat tua model standar.</Li>
-          <Li>Lainnya:</Li>
-            <Li>Kaos dalam putih polos</Li>
-            <Li>Ikat pinggang Pramuka</Li>
-            <Li>Kaos kaki Pramuka/hitam (10 cm di atas mata kaki)</Li>
-            <Li>Sepatu hitam bertali hitam</Li>
-            <Li>Jilbab coklat tua polos menutupi dada (bagi yang berjilbab)</Li>
-          </li></Li>
-        </ul>
-        <p> d. Hari Kamis</p>
-        <ul>
-          <li>Seragam putih abu-abu + rompi SMAN 103.</li>
-          <Li>Ketentuan lainnya sama seperti hari Selasa.</Li>
-          </li></Li>
-        </ul>
-        <p> e. Hari Jum'at</p>
-        <ul>
-          <li>Minggu Ganjil (pekan ke-1 & 3):</li>
-            <Li>Murid Muslim: Baju muslim sekolah + jilbab putih</Li>
-            <Li>Non-Muslim: Seragam putih abu-abu lengkap</Li>
-          <Li>Minggu Genap (pekan ke-2 & 4): </Li>
-            <Li>Seluruh murid memakai batik sekolah</Li>
-          <Li>Lainnya:</Li>
-            <Li>Kaos dalam putih polos</Li>
-            <Li>Ikat pinggang hitam</Li>
-            <Li>Kaos kaki putih (10 cm di atas mata kaki)</Li>
-            <Li>Sepatu hitam bertali hitam</Li>
-          </li></Li>
-        </ul></ul>
-        <p><strong>2. Bentuk Seragam Sekolah</strong></p>
-        <ul>
-        <p> a. Seragam Murid Laki-laki</p>
-        <ul>
-          <li>Kemeja putih lengan pendek, tidak ketat, dengan:</li>
-            <Li>Badge OSIS di saku kiri</Li>
-            <Li>Bendera merah putih di atas saku</Li>
-            <Li>Nama murid di dada kanan</Li>
-            <Li>Badge sekolah & kabupaten/kota di lengan kanan</Li>
-          <Li>Celana panjang standar (tidak ketat), lingkar bawah 44 cm, 1 saku belakang kanan model bobok dengan tutup.</Li>  
-          </Li></Li>
-        </ul>
-        <p> b. Seragam Murid Perempuan</p>
-        <ul>
-          <li>Kemeja putih (pendek atau panjang bagi yang berjilbab), tidak ketat, dengan:</li>
-            <Li>Badge OSIS di saku kiri</Li>
-            <Li>Bendera merah putih di atas saku</Li>
-            <Li>Nama murid di dada kanan</Li>
-            <Li>Badge sekolah & kabupaten/kota di lengan kanan</Li>
-          <Li>Rok panjang abu-abu/coklat model span lipit satu, panjang hingga mata kaki</Li>
-          <Li>Jilbab segi empat putih polos (kecuali Rabu: coklat tua polos)</Li>
-            <Li>Topi, dasi, dan ikat pinggang wajib saat upacara.</Li>
-          </Li></Li>
-        </ul></ul>
-        <p><strong>3. Ketentuan Lain</strong></p>
-        <ul>
-          <p>Tidak diperkenankan menggunakan jaket, mantel, sweater, atau sejenisnya kecuali dalam kondisi sakit.</p> 
-            <p> a. Seragam Praktik:</p>
-            <ul>
-            <Li>Praktik olahraga wajib mengenakan seragam olahraga.</Li>
-            <Li>Praktik laboratorium IPA wajib mengenakan jas lab sekolah.</Li>
-            <Li>Saat pelajaran Pendidikan Agama dan Pembiasaan Imtaq, murid diimbau mengenakan seragam sesuai agama (bagi yang Islam menutup aurat) dan membawa Kitab Suci versi cetak, bukan digital.</Li>
-            <Li>Dilarang menitipkan makanan, helm, atau barang lainnya di pos keamanan.</Li>
-            <Li>Dilarang memesan makanan/minuman dari luar sekolah (termasuk layanan online seperti GoFood, GrabFood, dll).</Li>
-            <Li>Dilarang makan dan minum di dalam kelas.</Li>
-          </Li></Li>
-        </ul></ul>
-        <p><strong>4. Kerapian</strong></p>
-        <ul>
-        <p> a. Rambut</p>
-            <ul>
-          <Li>Rambut murid laki-laki harus rapi: tidak plontos, gondrong, dikuncir, dan tidak menutupi alis, telinga, atau kerah baju (panjang maksimal 4 cm atas, 3 cm samping).</Li>
-          <Li>Rambut murid perempuan yang melewati bahu harus diikat rapi.</Li>
-          <Li>Seluruh murid dilarang mewarnai rambut.</Li>
-            </ul>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Tata Tertib dan Administrasi</h2>
+      <p>Pedoman dan peraturan bagi siswa SMAN 103 Jakarta dalam menjaga kedisiplinan dan karakter.</p>
+    </div>
+  </section>
 
-        <p> b. Penampilan</p>
+  <!-- Konten Utama -->
+  <section class="content">
+    <h2>📘 Tata Tertib & Administrasi Siswa</h2>
+    <p class="intro">Berikut ketentuan dan pedoman resmi yang berlaku di lingkungan SMAN 103 Jakarta:</p>
+
+    <div class="rules-container">
+      <!-- Semua poin 1–17 tetap -->
+      <div class="rule-card">
+        <h3>1️⃣ Pakaian Seragam Sekolah</h3>
         <ul>
-          Murid tidak diperbolehkan:
-          <Li>Berkuku panjang atau mengecat kuku.</Li>
-          <Li>Menggunakan softlens berwarna (harus sesuai warna mata alami).</Li>
-          <Li>Memakai aksesoris berlebihan seperti kalung, gelang, kecuali anting kecil.</Li>
-          <Li>Membawa atau menggunakan perlengkapan make-up.</Li>
-          <Li>Memakai sepatu dengan bagian belakang diinjak.</Li>
+          <li><strong>Senin:</strong> Kemeja putih lengkap dengan atribut dan topi Tut Wuri.</li>
+          <li><strong>Selasa:</strong> Sama seperti Senin tanpa topi.</li>
+          <li><strong>Rabu:</strong> Seragam Pramuka lengkap.</li>
+          <li><strong>Kamis:</strong> Putih abu dengan rompi sekolah.</li>
+          <li><strong>Jumat:</strong> Baju muslim atau batik sekolah (bergantian tiap minggu).</li>
         </ul>
+      </div>
+
+      <div class="rule-card">
+        <h3>2️⃣ Bentuk Seragam Sekolah</h3>
+        <ul>
+          <li><strong>Laki-laki:</strong> Kemeja putih, celana abu-abu standar, atribut lengkap.</li>
+          <li><strong>Perempuan:</strong> Kemeja putih/jilbab, rok panjang abu-abu, atribut lengkap.</li>
         </ul>
-            
-        <p><strong>5. Kedisiplinan</strong></p>
+      </div>
+
+      <div class="rule-card">
+        <h3>3️⃣ Ketentuan Lain</h3>
         <ul>
-          <Li>Murid yang terlambat wajib melapor ke Guru Piket untuk pembinaan.</Li>
-          <Li>Dilarang membawa kendaraan bermotor ke lingkungan sekolah.</Li>
-          <Li>Telepon seluler wajib dikumpulkan di loker/tempat yang disediakan.</Li>
-          <Li>Laptop hanya boleh digunakan dengan izin guru mata pelajaran.</Li>
-          <Li>Saat pergantian jam, murid tidak boleh keluar kelas sebelum guru berikutnya datang.</Li>
-          <Li>Saat istirahat, murid tidak boleh keluar sekolah tanpa izin Guru Piket.</Li>
-          <Li>Setelah KBM selesai, kegiatan hanya diperbolehkan untuk ekstrakurikuler hingga pukul 17.00 WIB.</Li>
-          <Li>Murid hanya boleh keluar kelas dengan izin guru pengajar.</Li>
-          <Li>Murid dilarang berada di luar kelas tanpa izin guru piket, termasuk saat guru berhalangan hadir.</Li>
-          <Li>Batas kehadiran di sekolah maksimal pukul 17.00 WIB.</Li></Li>
+          <li>Dilarang memakai jaket di kelas kecuali sakit.</li>
+          <li>Seragam praktik sesuai kegiatan.</li>
+          <li>Dilarang menitipkan barang atau pesan makanan online.</li>
         </ul>
+      </div>
 
-        <p><strong>6. Kehadiran Murid</strong></p>
+      <div class="rule-card">
+        <h3>4️⃣ Kerapian</h3>
         <ul>
-            <Li>Murid wajib hadir di sekolah selambat-lambatnya pukul 06.30 WIB.</Li>
-            <Li>Kehadiran setelah 06.30 akan dicatat oleh petugas piket.</Li>
-            <Li>Ketidakhadiran karena sakit atau alasan lain wajib disertai surat keterangan dokter atau orang tua/wali.</Li>
-            <Li>Murid boleh meninggalkan sekolah sebelum jam berakhir hanya dengan izin resmi (guru piket, guru mapel, wali kelas, dan kesiswaan).</Li>
-            <Li>Surat izin meninggalkan sekolah diserahkan kembali ke wali kelas keesokan harinya.</Li>
-       </ul>
-
-        <p><strong>7. Pengajuan Izin Meninggalkan Jam Belajar</strong></p>
-        <ul>
-        <p>A. Jika Sudah Direncanakan</p>
-        <ul>
-            <Li>Membawa surat keterangan dari orang tua/wali.</Li>
-            <Li>Menyerahkan surat kepada guru piket atau staf wakil kepala sekolah.</Li>
-            <Li>Mengisi Formulir Izin Meninggalkan Sekolah, ditandatangani guru piket/wakil kepala sekolah.</Li>
-            <Li>Surat izin dibuat 2 rangkap (satu untuk kelas, satu untuk satpam).</Li>
-            <Li>Murid wajib membawa surat izin saat keluar dari sekolah.</Li>
-        </ul></ul>
-        <ul>
-        <p>B. Jika Tidak Direncanakan</p>
-        <ul>
-            <Li>Mengisi formulir izin di bagian Kesiswaan dengan alasan yang dapat dipertanggungjawabkan.</Li>
-            <Li>Ditandatangani oleh guru piket, guru pengajar, wali kelas, atau wakil kepala sekolah.</Li>
-            <Li>Wajib mengisi buku izin keluar/pulang di bagian piket.</Li>
-        </ul></ul>
-
-        <p><strong>8. Penggunaan Fasilitas Sekolah</strong></p>
-        <ul>
-        <p>Penggunaan fasilitas sekolah memerlukan izin tertulis dari pihak terkait, melalui:</p>
-        <ul>
-            <Li>Wakil Kepala Sekolah/Staf Sarpras</Li>
-            <Li>Penanggung jawab bidang masing-masing</Li>
-            <Li>Staf Tata Usaha (untuk gudang)</Li>
-            <Li>Fasilitas sekolah hanya boleh digunakan untuk kegiatan pendidikan dan kegiatan resmi sekolah.</Li>
-        </ul></ul>
-
-        <p><strong>9. Pembiasaan dan Pembentukan Karakter Positif</strong></p>
-        <ul>
-        <p>Kegiatan pembiasaan dilakukan setiap hari untuk membentuk karakter siswa:</p>
+          <li>Rambut rapi, tidak diwarnai.</li>
+          <li>Kuku pendek, tanpa make-up atau aksesoris berlebih.</li>
         </ul>
+      </div>
+
+      <div class="rule-card">
+        <h3>5️⃣ Kedisiplinan</h3>
         <ul>
-        <p>1. Senin</p>
-        <ul>
-        <li>Minggu 1 & 3: Upacara Bendera</li>
-        <Li>Minggu 2 & 4: Pembinaan / Perwalian oleh wali kelas</Li>
-        </ul></ul>
-        <ul>
-        <p>2. Selasa</p>
-        <ul>
-        <Li>Literasi Bahasa Indonesia (minggu ganjil)</Li>
-        <Li>Literasi Bahasa Inggris (minggu genap)</Li>
-        </ul></ul>
-        <ul>
-            <p>3. Rabu</p>
-            <p>Imtaq bersama di lapangan (Muslim: tadarus & salat dhuha; Non-Muslim: ibadah pagi)</p>
+          <li>Terlambat wajib lapor Guru Piket.</li>
+          <li>Dilarang membawa motor ke sekolah.</li>
+          <li>HP disimpan di loker saat KBM.</li>
         </ul>
+      </div>
+
+      <div class="rule-card">
+        <h3>6️⃣ Kehadiran Murid</h3>
         <ul>
-            <p>4. Kamis</p>
-            <p>Imtaq di kelas / aula sesuai agama masing-masing</p>
+          <li>Datang maksimal pukul 06.30 WIB.</li>
+          <li>Absen dengan surat keterangan bila sakit.</li>
         </ul>
+      </div>
+
+      <div class="rule-card">
+        <h3>7️⃣ Pengajuan Izin Meninggalkan Jam Belajar</h3>
         <ul>
-            <p>5. Jumat</p>
-            <ul>
-            <Li>Imtaq bersama</Li>
-            <Li>Literasi & unjuk bakat (puisi, menyanyi, story telling, dll)</Li>
-            <Li>Kegiatan informasi, motivasi, kolaborasi</Li>
-            <Li>Jumat sehat & aksi bergizi (senam, kerja bakti, sarapan bersama)</Li>
-            </ul>
-            <p>Catatan: Jadwal dapat berubah sesuai arahan Dinas Pendidikan.</p>
+          <li>Surat izin resmi dari orang tua/wali diperlukan.</li>
+          <li>Formulir ditandatangani guru piket/wakil kepala sekolah.</li>
         </ul>
+      </div>
 
-        <p><strong>10. Kebersihan dan Ketertiban</strong></p>
+      <div class="rule-card">
+        <h3>8️⃣ Penggunaan Fasilitas Sekolah</h3>
         <ul>
-            <Li>Siswa wajib menjaga kebersihan lingkungan sekolah dan kelas.</Li>
-            <Li>Menjaga kebersihan pribadi merupakan tanggung jawab setiap siswa.</Li>
+          <li>Gunakan fasilitas hanya untuk kegiatan pendidikan.</li>
+          <li>Izin tertulis diperlukan dari pihak berwenang.</li>
         </ul>
+      </div>
 
-        <p><strong>11. Upacara Bendera dan Peringatan Hari Besar</strong></p>
+      <div class="rule-card">
+        <h3>9️⃣ Pembiasaan & Karakter Positif</h3>
         <ul>
-            <Li>Siswa wajib mengikuti upacara setiap hari Senin dan hari-hari besar nasional.</Li>
-            <Li>Seragam harus sesuai ketentuan sekolah.</Li>
-            <Li>Pengecualian hanya bagi siswa yang sakit atau mendapat izin resmi.</Li>
+          <li>Senin: Upacara / Pembinaan.</li>
+          <li>Selasa: Literasi Bahasa.</li>
+          <li>Jumat: Imtaq, Literasi, Jumat Sehat.</li>
         </ul>
+      </div>
 
-        <p><strong>12. Kegiatan Ekstrakurikuler</strong></p>
+      <div class="rule-card">
+        <h3>🔟 Kebersihan & Ketertiban</h3>
         <ul>
-            <p>Bertujuan memperdalam pengetahuan, menyalurkan minat, dan membentuk karakter.</p>
-            <p>Setiap siswa :</p>
-        <ul> 
-            <Li>Wajib mengikuti 1–3 kegiatan ekstrakurikuler.</Li>
-            <Li>Wajib mengikuti Rohis (Islam) atau Rohkris/Rohkat (Kristen/Katolik).</Li>
-            <Li>Nilai ekskul diberikan bila kehadiran minimal 90%.</Li>
-            <Li>Pendanaan berasal dari BOS/BOP atau sumber lain yang sah.</Li>
-        </ul></ul>
+          <li>Siswa wajib menjaga kebersihan kelas dan lingkungan.</li>
+        </ul>
+      </div>
 
-        <p><strong>13. Kegiatan OSIS</strong></p>
+      <div class="rule-card">
+        <h3>1️⃣1️⃣ Upacara & Peringatan Hari Besar</h3>
         <ul>
-            <p>Siswa wajib berpartisipasi dalam kegiatan OSIS sesuai program sekolah. Dana kegiatan berasal dari BOS/BOP, donatur, atau sponsor.</p>
-            <p>Kegiatan di luar program OSIS harus:</p>
-            <ul>
-            <Li>Disetujui pembina dan kepala sekolah.</Li>
-            <Li>Mengajukan proposal resmi.</Li>
-            <Li>Setiap kegiatan wajib menjaga nama baik sekolah. </Li>
-        </ul></ul>
-        
-        <p><strong>14. Penghargaan</strong></p>
+          <li>Wajib mengikuti upacara bendera.</li>
+          <li>Pengecualian hanya dengan izin resmi.</li>
+        </ul>
+      </div>
+
+      <div class="rule-card">
+        <h3>1️⃣2️⃣ Kegiatan Ekstrakurikuler</h3>
         <ul>
-            <p>Siswa berprestasi mendapat piagam atau sertifikat dari sekolah.</p>
-            <p>Prestasi yang mengatasnamakan sekolah:</p>
-            <ul>
-            <Li>Piala menjadi milik sekolah.</Li>
-            <Li>Hadiah uang/barang diatur oleh sekolah.</Li>
-            <Li>Sertifikat difotokopi untuk arsip.</Li>
-            <Li>Untuk lomba pribadi/non-resmi, hadiah menjadi milik siswa dengan pengawasan guru pembina.</Li>
-        </ul></ul>
+          <li>Setiap siswa wajib mengikuti minimal satu ekskul.</li>
+          <li>Nilai diberikan bila hadir minimal 90%.</li>
+        </ul>
+      </div>
 
-        <p><strong>15. Pelanggaran Kategori Ringan</strong></p>
-            <ul>
-                <p>Meliputi:</p>
-                <ul>
-                    <Li>Seragam tidak sesuai aturan.</Li>
-                    <Li>Rambut tidak rapi atau diwarnai.</Li>
-                    <Li>Berdandan berlebihan / memakai aksesoris tidak wajar.</Li>
-                    <Li>Hadir terlambat atau tidak hadir tanpa izin.</Li>
-                    <Li>Tidak mengikuti kegiatan keagamaan atau pembiasaan.</Li>
-                </ul>
-            </ul>
+      <div class="rule-card">
+        <h3>1️⃣3️⃣ Kegiatan OSIS</h3>
+        <ul>
+          <li>Kegiatan harus disetujui pembina & kepala sekolah.</li>
+          <li>Proposal resmi wajib diajukan sebelum pelaksanaan.</li>
+        </ul>
+      </div>
 
-        <p><strong>16. Pelanggaran Kategori Sedang</strong></p>
-            <ul>
-                <p>Termasuk :</p>
-                <ul>
-                    <Li>Mengucapkan kata tidak sopan.</Li>
-                    <Li>Vandalisme / mencorat-coret fasilitas.</Li>
-                    <Li>Berkelahi atau membully siswa lain.</Li>
-                    <Li>Menyebarkan konten pornografi.</Li>
-                    <Li>Merokok di area sekolah (radius 500 meter).</Li>
-                    <Li>Membuat organisasi tanpa izin OSIS.</Li>
-                </ul>
-            </ul>
+      <div class="rule-card">
+        <h3>1️⃣4️⃣ Penghargaan</h3>
+        <ul>
+          <li>Prestasi siswa mendapat piagam atau sertifikat.</li>
+          <li>Piala resmi menjadi milik sekolah.</li>
+        </ul>
+      </div>
 
-        <p><strong>17. Pelanggaran Kategori Berat</strong></p>
-            <ul>
-                <p>Meliputi :</p>
-                <ul>
-                    <Li>Menghina guru, karyawan, atau siswa lain.</Li>
-                    <Li>Tawuran, pelecehan, atau kekerasan fisik.</Li>
-                    <Li>Tindakan asusila, hamil, atau menikah saat masih siswa.</Li>
-                    <Li>Pencurian, perjudian, atau membawa narkoba dan minuman keras.</Li>
-                    <Li>Terlibat tindakan kriminal yang menyebabkan penahanan atau hukuman hukum.</Li>
-                </ul>
-            </ul>
-            
-    </section>
+      <div class="rule-card">
+        <h3>1️⃣5️⃣ Pelanggaran Ringan</h3>
+        <ul>
+          <li>Seragam tidak sesuai, rambut tidak rapi, terlambat hadir.</li>
+        </ul>
+      </div>
 
-    <footer>
-        <p>&copy; 2025 Kesiswaan SMAN 103 Jakarta</p>
-    </footer>
+      <div class="rule-card">
+        <h3>1️⃣6️⃣ Pelanggaran Sedang</h3>
+        <ul>
+          <li>Vandalisme, berkata kasar, merokok, atau membuat organisasi ilegal.</li>
+        </ul>
+      </div>
+
+      <div class="rule-card">
+        <h3>1️⃣7️⃣ Pelanggaran Berat</h3>
+        <ul>
+          <li>Tawuran, pelecehan, narkoba, tindakan kriminal, atau penghinaan guru.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Kesiswaan SMAN 103 Jakarta</p>
+  </footer>
 </body>
 
 </html>
